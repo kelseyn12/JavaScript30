@@ -126,6 +126,15 @@ const de = links
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    const transportation = data.reduce(function(obj, item) {
+      if(!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
+    //start with blank object {} and every time we loop over one, we first see if there is even a 0 there to work with and if not we need to make an entry for that and then increment it.
+
   </script>
 </body>
 </html>
