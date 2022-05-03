@@ -92,10 +92,14 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+const category = document.querySelector('.mw-category');
+const links = [...category.querySelectorAll('a')]; //makes the Nodelist into an array. Using spread operator to spred every item to spread into an array. Will take every item out of Nodelist and put it into containing array.
+
+const de = links
+          .map(link => link.textContent) //maps through array
+          .filter(streetName.includes('de')); // will show only if it includes 'de'
 
 
-
-    
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
