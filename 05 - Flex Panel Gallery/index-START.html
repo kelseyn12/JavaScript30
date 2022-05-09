@@ -70,6 +70,11 @@
       align-items: center;
     }
 
+    .panel > *:first-child { transform: translateY(-100%);}
+    /* puts top words off screen */
+    .panel > *:last-child { transform: translateY(100%);}
+    /* puts bottom words off screen */
+
     .panel p {
       text-transform: uppercase;
       font-family: 'Amatic SC', cursive;
