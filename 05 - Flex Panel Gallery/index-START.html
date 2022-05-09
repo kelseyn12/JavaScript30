@@ -70,10 +70,13 @@
       align-items: center;
     }
 
-    .panel > *:first-child { transform: translateY(-100%);}
+    .panel > *:first-child { transform: translateY(-100%); }
     /* puts top words off screen */
-    .panel > *:last-child { transform: translateY(100%);}
+    .panel.open-active > *:first-child { transform: translateY(0%); }
+    .panel > *:last-child { transform: translateY(100%); }
     /* puts bottom words off screen */
+    .panel.open-active > *:last-child { transform: translateY(0%); }
+    /* when panel has class of open-active it will animate itself back in */
 
     .panel p {
       text-transform: uppercase;
