@@ -20,6 +20,7 @@ let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
 let hue = 0;
+let direction = true;
 
 function draw(e) {
   if (!isDrawing) return; //will stop the fn from running when they are not moused down
@@ -33,7 +34,20 @@ function draw(e) {
   ctx.stroke();
   [lastX, lastY] = [e.offsetX, e.offsetY]; //destructuring an array
   //will no longer start at 0. Will update where to start.
+
   hue++;
+  if(hue >= 360) {
+    hue = 0;
+  }
+}
+if(ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+  direction = !direction;
+}
+if(direction) {
+
+ctx.lineWidth++;
+} else{
+  ctx.lineWidth--;
 }
 
 
